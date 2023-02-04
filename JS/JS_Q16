@@ -1,0 +1,27 @@
+let obj = {
+    x: 2,
+    getX: function() {
+        console.log(this.x);
+    }
+}
+obj.getX(); (1)
+
+let x = 5;
+let obj1 = {
+    x: 2,
+    getX:() => {
+        console.log(this.x)
+    }
+}
+obj1.getX(); (2)
+
+let x1 = 5;
+let obj2 = {
+    x1: 2,
+    getX: function(){
+        let x1 = 10;
+        console.log(this.x1);
+    }
+}
+let y = obj2.getX;
+y(); (3)

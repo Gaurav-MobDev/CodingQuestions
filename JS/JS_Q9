@@ -1,0 +1,5 @@
+let person = { name: 'Ayush' };
+const members = [person];
+person.name = 'fff'
+person = null
+console.log(JSON.stringify(members));

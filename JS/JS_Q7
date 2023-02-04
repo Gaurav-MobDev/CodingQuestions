@@ -1,0 +1,5 @@
+function getAge(...args) {
+    console.log(args);
+  }
+  
+  getAge(21);

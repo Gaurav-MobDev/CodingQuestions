@@ -1,0 +1,50 @@
+// const debouncing = (func, delay) => {
+//  let flag;
+//  let timer;
+//  console.log('a')
+//  if(!flag){
+//     flag = true;
+//     clearInterval(timer);
+//     timer =  setTimeout(()=> {
+//          func();
+//          flag = false;
+//      }, delay)
+//  }
+// }
+
+// const callDebouncing = () => {
+//     for(let i = 0; i< 10; i++){
+//         debouncing(printNumber(i), 3000)
+//     }
+// }
+
+// const printNumber = (i) => {
+
+//     return () => {
+//         console.log(i)
+//     }
+   
+// }
+
+// callDebouncing();
+const debounce = (func, delay) => {
+    let debounceTimer
+    return function() {
+        const context = this
+        const args = arguments
+            clearTimeout(debounceTimer)
+                debounceTimer
+            = setTimeout(() => func.apply(context, args), delay)
+    }
+}
+const callit = () => {
+    for(let i = 0; i< 10; i++){
+        debounce(function() {
+            console.log("Hello\nNo matter how many times you" +
+                "click the debounce button, I get " +
+                "executed once every 3 seconds!!")
+                            }, 3000)()
+    }
+}
+callit()
+ 

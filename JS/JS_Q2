@@ -1,0 +1,10 @@
+function go(n) {
+    // n here is defined!
+    console.log(n); // Object {a: [1,2,3]}
+  
+    for (let m of n.a) { // ReferenceError
+       console.log(m);
+    }
+  }
+  
+  go({a: [1, 2, 3]});

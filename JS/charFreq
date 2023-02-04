@@ -1,0 +1,13 @@
+const charFrequency = function(string) {
+ let charInMap = {};
+ for(let i = 0 ; i < string.length; i++){
+   if(charInMap[string[i]]){
+       charInMap[string[i]]++;
+   }else{
+    charInMap[string[i]] = 1;
+   }
+ }
+ console.log(charInMap);
+}
+
+charFrequency('Gaurav')

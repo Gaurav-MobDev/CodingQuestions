@@ -1,0 +1,20 @@
+let nonMemoize = function(x){
+    return x*x;
+}
+
+let memoize = function(x){
+    let memoizedVal = {};
+    if(memoizedVal?.x){
+        return memoizedVal.x;
+    }
+    memoizedVal[x] = x*x;
+    return memoizedVal[x];
+}
+
+console.log(nonMemoize(5))
+console.log(nonMemoize(6))
+console.log(nonMemoize(5))
+
+console.log(nonMemoize(8))
+console.log(nonMemoize(9))
+console.log(nonMemoize(8))

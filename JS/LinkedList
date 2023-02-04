@@ -1,0 +1,53 @@
+class Node {
+    constructor(data){
+        this.head = data;
+        this.next = null;
+        this.prev = null;
+    }
+}
+
+class DoubleLinkedList {
+    constructor(){
+        this.head = null;
+        this.tail = null;
+    }
+    append(item){
+        let newNode = new Node(item);
+        if(!this.head){
+            this.head = newNode;
+            this.tail = newNode;
+        }else {
+            newNode.prev = this.tail;
+            this.tail.next = newNode;
+            this.tail = newNode;
+        }
+    }
+    appendAt(item, pos){
+        let current = this.head;
+        let newNode = new Node(item);
+        let counter = 1;
+        if(pos == 0){
+            this.head.prev = newNode;
+            newNode.next = this.head;
+            this.head = newNode;
+        }
+        while(current){
+            current = current.next;
+            if(counter == pos){
+                newNode.prev = current.prev;
+                current.prev.next = newNode;
+                newNode.next = current;
+                current.prev = newNode;
+            }
+            counter++;
+        }
+    }
+}
+
+const doubleLinkedList  = new DoubleLinkedList();
+doubleLinkedList.append(10);
+doubleLinkedList.append(20);
+doubleLinkedList.append(30);
+doubleLinkedList.append(40);
+doubleLinkedList.appendAt(50,2);
+console.log(doubleLinkedList);

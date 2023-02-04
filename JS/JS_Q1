@@ -1,0 +1,20 @@
+const obj1 = {
+    name: 'gaurav',
+    updatename: function(name){
+        this.name = name;
+    },
+    printname: function(){
+        console.log(this.name)
+    }
+}
+const obj2 = {
+    name: 'rana',
+}
+const obj3 = {
+    name: 'ramesh',
+}
+obj1.updatename('maa')
+obj1.printname()
+
+obj1.printname.call(obj2)
+obj1.printname.apply(obj3)
