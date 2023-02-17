@@ -1,0 +1,10 @@
+const leftRotateArrayByOne = (array) => {
+    let firstItem = array[0]
+    for(let index = 0; index < array.length - 1; index++){
+        array[index] = array[index+1];
+    }
+    array[array.length -1] = firstItem;
+    console.log(array)
+} 
+
+leftRotateArrayByOne([1,2,3,4,5])
