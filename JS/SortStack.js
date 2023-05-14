@@ -1,6 +1,7 @@
 let stack = [5, 6, 7, 1, 8, 9, 10, 11, 12, 13, 14, 15, 3];
 let stackCopy = [];
 let tempStack = [];
+
 function sortedStack() {
     let length = stack.length - 1;
     while(length >= 0){
@@ -11,7 +12,6 @@ function sortedStack() {
         }
         length--;
     }
-   
     console.log(stackCopy);
 }
 
